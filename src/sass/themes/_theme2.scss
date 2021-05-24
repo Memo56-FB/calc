@@ -1,0 +1,15 @@
+.theme2{
+    $main-background: hsl(0, 0%, 90%);
+    $toggle-keypad-background:hsl(0, 5%, 81%);
+    $screen-background: hsl(0, 0%, 93%);
+    // Keys
+    $key-background: hsl(45, 7%, 89%);
+    $key-shadown:hsl(35, 11%, 61%);
+    $key-del-reset-background:hsl(185, 42%, 37%);
+    $key-del-reset-shadow: hsl(185, 58%, 25%);
+    $key-equal:hsl(25, 98%, 40%);
+    $key-equal-shadown:hsl(25, 99%, 27%);
+    // text
+    $keys:hsl(60, 10%, 19%);
+    $special-keys:white;
+}
