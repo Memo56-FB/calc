@@ -13,23 +13,83 @@
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 12px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-    .attribution p{display: inline-block;}
+    .attribution a { color: hsl(83deg 100% 52%); }
+    .attribution p{display: inline-block; color: white;}
+  </style>
+  <style type="text/css">
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    ::-webkit-scrollbar-button {
+      width: 0px;
+      height: 0px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #e1e1e1;
+      border: 0px none #ffffff;
+      border-radius: 50px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ffffff;
+    }
+    ::-webkit-scrollbar-thumb:active {
+      background: #000000;
+    }
+    ::-webkit-scrollbar-track {
+      background: #666666;
+      border: 0px none #ffffff;
+      border-radius: 36px;
+    }
+    ::-webkit-scrollbar-track:hover {
+      background: #666666;
+    }
+    ::-webkit-scrollbar-track:active {
+      background: #333333;
+    }
+    ::-webkit-scrollbar-corner {
+      background: transparent;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <section class="header-calc"> 
-      <h1>Calc</h1>
-      <p>Theme</p>
+      <h1>calc</h1>
+      <p>THEME</p>
       <div class="themes-selector">
         <div class="numbers">
-          <a href="#1">1</a><a href="#2">2</a><a href="#3">3</a>
+          <button>1</button><button>2</button><button>3</button>
         </div>
         <div class="box-circle">
-          <div class="circle"></div>
+          <button class="circle"></button>
         </div>
       </div>
+    </section>
+    <section class="screen">
+      <div>
+        3287,6678
+      </div>
+    </section>
+    <section class="numpad">
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button class="del">DEL</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>+</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>-</button>
+      <button>.</button>
+      <button>0</button>
+      <button>/</button>
+      <button>x</button>
+      <button class="reset">RESET</button>
+      <button class="equal">=</button>
     </section>
   </div>
   <div class="attribution">
