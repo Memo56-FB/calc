@@ -1,101 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
-  <title>Frontend Mentor | Calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 12px; text-align: center; }
-    .attribution a { color: hsl(83deg 100% 52%); }
-    .attribution p{display: inline-block; color: white;}
-  </style>
-  <style type="text/css">
-    ::-webkit-scrollbar {
-      width: 4px;
-      height: 4px;
-    }
-    ::-webkit-scrollbar-button {
-      width: 0px;
-      height: 0px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #e1e1e1;
-      border: 0px none #ffffff;
-      border-radius: 50px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #ffffff;
-    }
-    ::-webkit-scrollbar-thumb:active {
-      background: #000000;
-    }
-    ::-webkit-scrollbar-track {
-      background: #666666;
-      border: 0px none #ffffff;
-      border-radius: 36px;
-    }
-    ::-webkit-scrollbar-track:hover {
-      background: #666666;
-    }
-    ::-webkit-scrollbar-track:active {
-      background: #333333;
-    }
-    ::-webkit-scrollbar-corner {
-      background: transparent;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <section class="header-calc"> 
-      <h1>calc</h1>
-      <p>THEME</p>
-      <div class="themes-selector">
-        <div class="numbers">
-          <button>1</button><button>2</button><button>3</button>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 12px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(83deg 100% 52%);
+      }
+      .attribution p {
+        display: inline-block;
+        color: white;
+      }
+    </style>
+    <style type="text/css">
+      ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+      ::-webkit-scrollbar-button {
+        width: 0px;
+        height: 0px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #e1e1e1;
+        border: 0px none #ffffff;
+        border-radius: 50px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ffffff;
+      }
+      ::-webkit-scrollbar-thumb:active {
+        background: #000000;
+      }
+      ::-webkit-scrollbar-track {
+        background: #666666;
+        border: 0px none #ffffff;
+        border-radius: 36px;
+      }
+      ::-webkit-scrollbar-track:hover {
+        background: #666666;
+      }
+      ::-webkit-scrollbar-track:active {
+        background: #333333;
+      }
+      ::-webkit-scrollbar-corner {
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="header-calc">
+        <h1>calc</h1>
+        <p>THEME</p>
+        <div class="themes-selector">
+          <div class="numbers">
+            <button>1</button><button>2</button><button>3</button>
+          </div>
+          <div class="box-circle">
+            <button class="circle"></button>
+          </div>
         </div>
-        <div class="box-circle">
-          <button class="circle"></button>
-        </div>
-      </div>
-    </section>
-    <section class="screen">
-      <div>
-        
-      </div>
-    </section>
-    <section class="numpad">
-      <button id="seven">7</button>
-      <button id="eight">8</button>
-      <button id="nine">9</button>
-      <button id="delB" class="del">DEL</button>
-      <button id="four">4</button>
-      <button id="five">5</button>
-      <button id="six">6</button>
-      <button id="sum">+</button>
-      <button id="one">1</button>
-      <button id="two">2</button>
-      <button id="three">3</button>
-      <button id="subt">-</button>
-      <button id="dot">.</button>
-      <button id="zero">0</button>
-      <button id="div">/</button>
-      <button id="mult">x</button>
-      <button id="resetB" class="reset">RESET</button>
-      <button id="equalB" class="equal">=</button>
-    </section>
-  </div>
-  <div class="attribution">
-    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a></p> 
-    <p>Coded by <a href="#">Guillermo Farfan Bivanco</a>.</p>
-  </div>
-  <script src="./js/index.js"></script>
-</body>
+      </section>
+      <section class="screen">
+        <div></div>
+      </section>
+      <section class="numpad">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="del">DEL</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>+</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button>
+        <button>.</button>
+        <button>0</button>
+        <button>/</button>
+        <button>x</button>
+        <button class="reset">RESET</button>
+        <button class="equal">=</button>
+      </section>
+    </div>
+    <div class="attribution">
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >
+      </p>
+      <p>Coded by <a href="#">Guillermo Farfan Bivanco</a>.</p>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
 </html>

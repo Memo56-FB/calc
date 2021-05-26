@@ -132,6 +132,8 @@ button{
   height: 25px;
   background-color: var(--toggle-keypad-background);
   border-radius: 40px;
+  justify-content: flex-start;
+  transition: .3s justify-content;
 }
 .circle{
   width: 15px;
