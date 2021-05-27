@@ -5,14 +5,12 @@ let resta = 0;
 let multiplicacion = 0;
 let division = 0;
 let igual = 0;
-let aux = 0;
 const resetValues = ()=>{
     suma = 0;
     resta = 0;
     division = 0;
     multiplicacion = 0;
     igual = 0;
-    aux = 0;
 }
 const cleanScreen = ()=>{
     while (screen.firstChild) {
@@ -41,6 +39,7 @@ const sumar = () => {
     }
     if(division !== 0){
       suma = dividir();
+      division = 0;
     }
     suma += +screen.outerText;
     cleanScreen();
@@ -64,6 +63,7 @@ const restar = () => {
     }
     if(division !== 0){
       resta = dividir();
+      division = 0;
     }
     if(resta <= 0){
         resta += +screen.outerText;
@@ -90,6 +90,7 @@ const multiplicar = () => {
   };
   if(division !== 0){
     multiplicacion = dividir();
+    division = 0;
   }
   if(multiplicacion === 0){
     multiplicacion = 1;
@@ -103,10 +104,10 @@ const multiplicar = () => {
   }
 };
 const dividir = ()=>{
-  if(igual){
-    cleanScreen()
-    division = igual;
-    igual = 0;
+if(igual){
+  cleanScreen()
+  division = igual;
+  igual = 0;
 };
 if(resta !== 0){
   division = restar();
@@ -116,14 +117,22 @@ if(suma){
   division = sumar();
   suma = 0;
 };
-if(division === 0){
-  division = +screen.outerText;
-};
+if(multiplicacion !== 0){
+  division = multiplicar();
+  multiplicacion = 0;
+}
 if(screen.outerText === ""){
   
 }else{
-division /= Number(screen.outerText);
-cleanScreen();
+  if(division){
+    division /= Number(screen.outerText);
+    cleanScreen();
+    return division;
+  }else{
+    division = +screen.outerText;
+    cleanScreen();
+    return division;
+  }
 return division;
 }
 }
