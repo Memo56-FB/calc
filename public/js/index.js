@@ -5,48 +5,128 @@ let resta = 0;
 let multiplicacion = 0;
 let division = 0;
 let igual = 0;
+let aux = 0;
 const resetValues = ()=>{
     suma = 0;
     resta = 0;
     division = 0;
     multiplicacion = 0;
     igual = 0;
+    aux = 0;
 }
-const borrarPantalla = ()=>{
+const cleanScreen = ()=>{
     while (screen.firstChild) {
         screen.removeChild(screen.firstChild);
       }
 }
 const borrarPantallaNumeros = ()=>{
     if(igual || screen.outerText === "0"){
-        borrarPantalla();
+        cleanScreen();
         resetValues();
     }
 }
 const sumar = () => {
     if(igual){
-        borrarPantalla()
+        cleanScreen()
         suma = igual;
         igual = 0;
     };
+    if(resta !== 0){
+      suma = restar();
+      resta = 0;
+    }
+    if(multiplicacion !== 0){
+      suma = multiplicar()
+      multiplicacion = 0;
+    }
+    if(division !== 0){
+      suma = dividir();
+    }
     suma += +screen.outerText;
-    borrarPantalla();
+    cleanScreen();
     return suma;
 };
+
+
 const restar = () => {
     if(igual){
-        borrarPantalla()
+        cleanScreen()
         resta = igual;
         igual = 0;
     };
+    if(suma){
+      resta = sumar();
+      suma = 0;
+    }
+    if(multiplicacion !== 0){
+      resta = multiplicar()
+      multiplicacion = 0;
+    }
+    if(division !== 0){
+      resta = dividir();
+    }
     if(resta <= 0){
         resta += +screen.outerText;
     }else{
         resta -= +screen.outerText;
     }
-    borrarPantalla();
+    cleanScreen();
     return resta;
 };
+
+const multiplicar = () => {
+  if(igual){
+      cleanScreen()
+      multiplicacion = igual;
+      igual = 0;
+  };
+  if(resta !== 0){
+    multiplicacion = restar();
+    resta = 0;
+  };
+  if(suma){
+    multiplicacion = sumar();
+    suma = 0;
+  };
+  if(division !== 0){
+    multiplicacion = dividir();
+  }
+  if(multiplicacion === 0){
+    multiplicacion = 1;
+  };
+  if(screen.outerText === ""){
+    
+  }else{
+  multiplicacion *= Number(screen.outerText);
+  cleanScreen();
+  return multiplicacion;
+  }
+};
+const dividir = ()=>{
+  if(igual){
+    cleanScreen()
+    division = igual;
+    igual = 0;
+};
+if(resta !== 0){
+  division = restar();
+  resta = 0;
+};
+if(suma){
+  division = sumar();
+  suma = 0;
+};
+if(division === 0){
+  division = +screen.outerText;
+};
+if(screen.outerText === ""){
+  
+}else{
+division /= Number(screen.outerText);
+cleanScreen();
+return division;
+}
+}
 
 
 const equalCases = () => {
@@ -59,6 +139,16 @@ const equalCases = () => {
     screen.append(restar());
     igual = resta;
     resta = 0;
+  }
+  if (multiplicacion) {
+    screen.append(multiplicar());
+    igual = multiplicacion;
+    multiplicacion = 0;
+  }
+  if (division) {
+    screen.append(dividir());
+    igual = division;
+    division = 0;
   }
 };
 
@@ -128,7 +218,7 @@ numpad.addEventListener("click", (e) => {
     }
   }
   if (e.target.textContent === "RESET") {
-    borrarPantalla();
+    cleanScreen();
     resetValues();
   }
 });
